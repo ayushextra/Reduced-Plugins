@@ -72,6 +72,19 @@
             animation: slideDown 1s ease-out;
         }
 
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .brand-logo {
+            width: 35px;
+            height: 35px;
+            border-radius: 6px;
+            object-fit: cover;
+        }
+
         .logo {
             font-size: 26px;
             font-weight: 800;
@@ -101,7 +114,6 @@
             font-weight: 500;
             font-size: 15px;
             transition: all 0.3s ease;
-            position: relative;
         }
 
         nav ul li a:hover {
@@ -239,22 +251,23 @@
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 25px rgba(255, 51, 102, 0.08);
         }
 
-        .card-icon {
-            width: 70px;
-            height: 70px;
-            background: rgba(255, 51, 102, 0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .card-icon-container {
+            width: 75px;
+            height: 75px;
             margin: 0 auto 25px auto;
-            color: var(--accent-color);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
         }
 
-        .card-icon svg { width: 35px; height: 35px; }
+        .card-logo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
 
         .card h3 { font-size: 1.8rem; font-weight: 700; margin-bottom: 12px; }
-        .card .tagline { color: var(--text-muted); font-size: 1rem; margin-bottom: 30px; }
+        .card .tagline { color: var(--text-muted); font-size: 1rem; margin-bottom: 30px; line-height: 1.5; }
 
         .btn-view {
             display: inline-flex;
@@ -288,8 +301,6 @@
         }
 
         footer { background: var(--bg-primary); padding: 40px 10%; text-align: center; color: var(--text-muted); font-size: 0.9rem; }
-        .footer-links a { color: var(--text-muted); text-decoration: none; margin: 0 15px; }
-        .footer-links a:hover { color: var(--accent-color); }
 
         @keyframes slideDown { from { transform: translateY(-100%); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
         @keyframes fadeInUp { from { transform: translateY(40px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
@@ -300,7 +311,10 @@
     <div class="bg-glow"></div>
 
     <header>
-        <div class="logo">Redux <span>Plugins</span></div>
+        <div class="logo-container">
+            <img src="logo.png" alt="Redux Logo" class="brand-logo">
+            <div class="logo">Redux <span>Plugins</span></div>
+        </div>
         <nav>
             <ul>
                 <li><a href="#home">Home</a></li>
@@ -345,16 +359,12 @@
 
         <div class="plugin-container">
             <div class="card">
-                <div class="card-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
-                        <polyline points="2 17 12 22 22 17"></polyline>
-                        <polyline points="2 12 12 17 22 12"></polyline>
-                    </svg>
+                <div class="card-icon-container">
+                    <img src="logo.png" alt="NexusCore" class="card-logo">
                 </div>
                 <h3>NexusCore</h3>
-                <p class="tagline">All-in-one system engine featuring synchronized chat architectures, dynamic safety systems, and core cross-dimensional modules.</p>
-                <a href="nexuscore.html" target="_blank" class="btn-view">
+                <p class="tagline">An all-in-one comprehensive core environment built for chat synchronization, interface management, and dimension safety protocols.</p>
+                <a href="plugins.html" target="_blank" class="btn-view">
                     View Details
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                 </a>
